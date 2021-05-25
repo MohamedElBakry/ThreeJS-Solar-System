@@ -37,15 +37,16 @@ renderer.render(scene, camera);
 for (let i = 0; i < NUM_STARS; i++)
   addStars();
 
-const spaceTexture = new THREE.TextureLoader().load("assets/space1.jpg");
+  
+  const spaceTexture = new THREE.TextureLoader().load("assets/2k_stars_milky_way.jpg");
+// const spaceTexture = new THREE.TextureLoader().load("assets/space1.jpg");
 // const spaceTexture = new THREE.TextureLoader().load("assets/space2.jpg");
-// const spaceTexture = new THREE.TextureLoader().load("assets/2k_stars_milky_way.jpg");
 scene.background = spaceTexture;
 
 const ambientLight = new THREE.AmbientLight(new THREE.Color("white"));
 scene.add(ambientLight);
 
-addPlanets(planets);
+addPlanetsToScene(planets);
 const sun = planets["sun"];
 sun.position.set(0, 0, -30);
 
@@ -65,7 +66,7 @@ function moveCamera() {
   // Rotate the planets
   for (const key in planets) {
     const planet = planets[key];
-    planet.rotation.x += 0.005;
+    // planet.rotation.x += 0.005;
     planet.rotation.y += 0.007;
     // planet.rotation.z += 0.005;
   }
@@ -103,7 +104,7 @@ function draw() {
   // Make the scene more lively by gently rotating the planets and sun.
   for (const key in planets) {
     const planet = planets[key];
-    planet.rotation.x += 0.0009 + Math.random() / 10000;
+    // planet.rotation.x += 0.0009 + Math.random() / 10000;
     planet.rotation.y += 0.0009 + Math.random() / 10000;
     // planet.rotation.z += 0.0005 + Math.random() / 1000;
   }
@@ -136,7 +137,7 @@ function draw() {
 /** Add the planets to the scene with an increasing z value -- not to scale.
  * @param {THREE.Mesh[]} planets - An array of meshes containing the planets to be added to the scene
  */
-function addPlanets (planets) {
+function addPlanetsToScene (planets) {
   let [x, y, z] = [0, 0, 0];
   for (const key in planets) {
       const planet = planets[key];
