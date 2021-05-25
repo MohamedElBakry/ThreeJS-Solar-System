@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Pattaya");
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+:root {
+  --background-black: rgb(0, 0, 0);
+  --space-between: 430px;
+
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  /* font-style: normal; */
+}
+
+
+main {
+  width: 100vw;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding: 120px 0px;
+  
+  display: grid;
+  grid-template-columns: repeat(100, 1fr);
+  opacity: 1;
+}
+
+h1, h2, h3, oneline-quote {
+  font-family: "Pattaya", sans-serif;
+  font-weight: 700;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+header {
+  background: var(--background-black);
+  grid-column: span;
+  font-size: 3rem;
+  padding: 2rem;
+  margin-bottom: var(--space-between);
+  opacity: 0.5;
+}
+
+planet-info {
+  grid-column: 1 / 12;
+  background: var(--background-black);
+  padding: 2.5rem;
+  margin-bottom: var(--space-between);
+  font-size: 1.3rem;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+oneline-quote {
+  margin: 0;
+  padding: 0;
+  grid-column: 2 / span 9;
+  margin-bottom: var(--space-between);
+  font-style: italic;
+}
+
+oneline-quote p {
+  color: black;
+  background-color: white;
+  font-size: 4rem;
+  display: inline;
+  line-height: 1;
+}
+
+.left {
+  grid-column: 6 / 12;
+}
