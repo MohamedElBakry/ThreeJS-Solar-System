@@ -44,7 +44,7 @@ const sun = planets["sun"];
 sun.position.set(0, 0, -30);
 
 function moveCamera() {
-  const t = document.body.getBoundingClientRect().top;
+  const scrollDistance = document.body.getBoundingClientRect().top;
   for (const key in planets) {
     const planet = planets[key];
     planet.rotation.x += 0.05;
@@ -53,18 +53,17 @@ function moveCamera() {
   }
   // console.log(t);
   
-  camera.position.x = t * -0.0002;
+  camera.position.x = scrollDistance * -0.0002;
   camera.position.y = camera.position.x;
-  camera.position.z = t * -0.01;
+  camera.position.z = scrollDistance * -0.01;
 
-  if (t < -6100) {
+  if (scrollDistance < -6100) {
     alert("Now you can pan around! Use your mouse!");
     console.log("End point reached");
     camera.position.set(50, 0, 90);
     controls.update();
     reachedEnd = true;
-  }
-
+  } 
   controls.update();
 }
 
