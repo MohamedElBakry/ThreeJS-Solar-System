@@ -5,6 +5,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 
 let reachedEnd = false;
+// Create an array of string-number array pairs which represent the name of star/planet and it's size -- not to scale. 
 const solarSystem = [
   ["sun", 30], ["mercury", 1], ["venus", 2], ["earth", 3], ["mars", 2], ["jupiter", 4], ["saturn", 3], ["uranus", 3], ["neptune", 3]
 ];
@@ -33,9 +34,8 @@ controls.update();  // Three.js docs state that following a manual camera positi
 // Draw
 renderer.render(scene, camera);
 
-for (let i = 0; i < NUM_STARS; i++) {
+for (let i = 0; i < NUM_STARS; i++)
   addStars();
-}
 
 const spaceTexture = new THREE.TextureLoader().load("assets/space1.jpg");
 // const spaceTexture = new THREE.TextureLoader().load("assets/space2.jpg");
@@ -133,7 +133,7 @@ function draw() {
   return planetsArr;
 }
 
-/** Add the planets to the scene with an increasing 7 value.
+/** Add the planets to the scene with an increasing z value -- not to scale.
  * @param {THREE.Mesh[]} planets - An array of meshes containing the planets to be added to the scene
  */
 function addPlanets (planets) {
