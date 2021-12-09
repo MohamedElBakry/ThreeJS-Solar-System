@@ -20,3 +20,8 @@ To run it please do the following:
   ```
   4. Visit the localhost page at [localhost](http://localhost:3000)
   
+  
+## Example
+Here's a gif of the opening screen:
+
+![opening-screen](rotation.gif)
